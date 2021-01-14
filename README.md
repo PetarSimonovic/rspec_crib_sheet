@@ -21,23 +21,20 @@ in above example, **:storm** randomly returns true or false; **allow** forces fa
 ```rb
 expect(subject.balance).to be_an(Numeric)
 ```
-checks whether 'balance' returns a numeric value
-
-**be_an_instance_of**
 
 ```rb
 expect(subject.release_bike).to be_an_instance_of Bike
 ```
-Checks whether release_bike returns a Bike object
 
 **before**
+
+Use 'before' within 'Context' to limit its scope
 
 ```rb
 before do
   subject.top_up(10)
 end
 ```
-Use 'before' within 'Context' to limit its scope
 
 **CONSTANTS**
 
@@ -49,10 +46,10 @@ expect { card.top_up(1) }.to raise_error "Card limit of £#{OysterCard::CARD_LIM
 ```
 
 **DOUBLES**
+
 ```rb
 let(:station) { double :station }
 ```
-creates a 'stunt double' of a class called 'station'
 
 **include**
 
