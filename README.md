@@ -79,6 +79,11 @@ expect(subject).to be_in_journey
 expect(subject).not_to be_in_journey
 ```
 
+**raise_error**
+```rb
+expect { card.top_up(1) }.to raise_error "Card limit of £90 reached"
+```
+
 **RANDOMISATION TESTS**
 
 Randomisation is tricky to test for in RSpec.
