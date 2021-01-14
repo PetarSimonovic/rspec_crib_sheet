@@ -36,6 +36,11 @@ before do
 end
 ```
 
+**change**
+```rb
+expect { subject.touch_out }.to change{ subject.balance }.by(-1)
+```
+
 **CONSTANTS**
 
 Syntax for using a constant in RSpec: ClassName::CONSTANT_NAME
@@ -50,6 +55,12 @@ expect { card.top_up(1) }.to raise_error "Card limit of £#{OysterCard::CARD_LIM
 ```rb
 let(:station) { double :station }
 ```
+
+**eq**
+```rb
+expect(actual).to eq(expected)
+```
+
 
 **include**
 
@@ -92,14 +103,4 @@ source: http://www.emilyplatzer.com/2014/04/21/basic-ruby-rspec.html
 ```rb
 it { is_expected.to respond_to(:method) }
 it { is_expected.to respond_to(:touch_in).with(1).argument }
-```
-
-**to_change**
-```rb
-expect { subject.touch_out }.to change{ subject.balance }.by(-1)
-```
-
-**to_eq**
-```rb
-expect(actual).to eq(expected)
 ```
