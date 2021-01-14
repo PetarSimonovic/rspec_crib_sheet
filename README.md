@@ -8,12 +8,12 @@
 
 **allow**
 
+in below example, '':storm' randomly returns true or false; 'allow' forces false for the test
+
 ```rb
 allow(subject).to receive(:storm) { false }
 
 ```
-
-in above example, **:storm** randomly returns true or false; **allow** forces false for test
 
 
 **be_an**
@@ -70,12 +70,12 @@ expect(subject).not_to be_in_journey
 
 **RANDOMISATION TESTS**
 
-Randomisation is tricky to test for in RSpec without writing code that itself needs testing.
-In the example below, dice.roll is a method that generates a random number between 1 and 6.
-The result is stored in an array called 'roll'.
-The test does not check whether dice_roll is random.
-Instead, it checks if the 'expected' results in 'roll' correspond with an 'actual' "real world" outcome
-(eg, after 100 rolls we would expect the lowest number rolled to be 1 and the highest to be 6)
+Randomisation is tricky to test for in RSpec.
+In the example below: <ul><li>dice.roll is a method that generates a random number between 1 and 6.</li>
+<li>The result is stored in an array called 'roll'.</li>
+<li>The test does not check whether dice_roll is random.</li>
+<li>Instead, it checks if the 'expected' results in 'roll' correspond with an 'actual' real-world outcome
+(eg, after 100 rolls we would expect the lowest number rolled to be 1 and the highest to be 6)</li></ul>
 
 ```rb
 it "generates random numbers from 1 to 6" do
