@@ -31,9 +31,11 @@ expect(subject.release_bike).to be_an_instance_of Bike
 Use 'before' within 'Context' to limit its scope
 
 ```rb
-before do
-  subject.top_up(10)
-end
+context "it should top_up before deduct" do
+
+  before do
+    subject.top_up(10)
+  end
 ```
 
 **change**
@@ -53,7 +55,9 @@ expect { card.top_up(1) }.to raise_error "Card limit of £#{OysterCard::CARD_LIM
 **DOUBLES**
 
 ```rb
-let(:station) { double :station }
+let(:station) { described_class.new("Mile End", 2) }
+
+let(:topped_up_card) { described_class.new(OysterCard::CARD_LIMIT) }
 ```
 
 **eq**
@@ -67,6 +71,11 @@ expect(actual).to eq(expected)
 ```rb
 expect(subject.runway).to include(plane)
 expect(subject.runway).not_to include(plane)
+```
+
+**output**
+```rb
+expect { subject.show_menu }.to output(/#{menu}$/).to_stdout
 ```
 
 **PREDICATE MATCHERS**
