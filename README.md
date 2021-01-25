@@ -58,7 +58,14 @@ expect { card.top_up(1) }.to raise_error "Card limit of £#{OysterCard::CARD_LIM
 let(:station) { described_class.new("Mile End", 2) }
 
 let(:topped_up_card) { described_class.new(OysterCard::CARD_LIMIT) }
+
+let(:working_bike) { double('working_bike', working?: true) }
+
+let(:broken_bike) { double('broken_bike', working?: false) }
+
 ```
+Doubles are simple objects that can receive methods
+
 
 **eq**
 ```rb
