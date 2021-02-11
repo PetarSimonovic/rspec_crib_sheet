@@ -55,6 +55,13 @@ expect { card.top_up(1) }.to raise_error "Card limit of £#{OysterCard::CARD_LIM
 **DOUBLES**
 
 ```rb
+
+let(:rock) { Game.new("Rock") }
+
+let(:paper) { Game.new("Paper") }
+
+let(:scissors) { Game.new("Scissors") }
+
 let(:station) { described_class.new("Mile End", 2) }
 
 let(:topped_up_card) { described_class.new(OysterCard::CARD_LIMIT) }
